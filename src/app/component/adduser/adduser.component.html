@@ -1,0 +1,43 @@
+<div class="adduser">
+  <h2 class="adduser-header">Dodaj użytkownika</h2>
+  <form [formGroup]="loginForm" class="login-container" (ngSubmit)="sent()">
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+      <input type="email" placeholder="Email" formControlName="email">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+      <div *ngIf="formControls.email.errors.required">Email is required</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+      <input type="password" placeholder="Password" formControlName="password">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+      <div *ngIf="formControls.password.errors.required">Password is required</div>
+    </div>
+    <div *ngIf="isSubmitted && formControls.active.errors" class="help-block">
+      <div *ngIf="formControls.active.errors.required">Active is required</div>
+    </div>
+    <p> Użytkownik Aktywny
+    <select type="email" formControlName="active" >
+      <option value=1>Tak</option>
+      <option value=0>Nie</option>
+    </select>
+    </p>
+    <div *ngIf="isSubmitted && formControls.role.errors" class="help-block">
+      <div *ngIf="formControls.role.errors.required">Role is required</div>
+    </div>
+    <p> Rola użytkownika
+    <select type="email" formControlName="role">
+      <option>user</option>
+      <option>admin</option>
+      <option>menager</option>
+    </select>
+    </p>
+    <p>
+      <input type="submit" value="Dodaj Użytkownika">
+    </p>
+  </form>
+</div>

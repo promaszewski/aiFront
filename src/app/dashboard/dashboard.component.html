@@ -1,0 +1,19 @@
+<div class="body">
+
+
+  <button mat-button [matMenuTriggerFor]="wizy" *ngIf="islogin()">{{Wizyty}}</button>
+  <mat-menu #wizy="matMenu">
+    <button mat-menu-item routerLink="/addvisit">Dodaj Wizyte</button>
+    <button mat-menu-item routerLink="/myvisit">Moje Wizyty</button>
+    <button mat-menu-item routerLink="/manager" *ngIf="getrole2()">'Wizyty użytkowników'</button>
+  </mat-menu>
+  <button mat-button routerLink="/login" *ngIf="isnotlogin()">Zaloguj</button>
+<button mat-button [matMenuTriggerFor]="menu" *ngIf="islogin()">Opcje</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="wyloguj()" >Wyloguj</button>
+ <button mat-menu-item routerLink="/adduser" *ngIf="getrole()">'Dodaj Użytkownika'</button>
+  <button mat-menu-item routerLink="/userlist" *ngIf="getrole()">'Lista Użytkowników'</button>
+
+</mat-menu>
+
+</div>

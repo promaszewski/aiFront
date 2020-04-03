@@ -1,0 +1,28 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="data">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="active">
+      <mat-header-cell *matHeaderCellDef>Czy Aktywny</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.active}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="deleted">
+      <mat-header-cell *matHeaderCellDef>Czy Usunięty</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.deleted}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="role">
+      <mat-header-cell *matHeaderCellDef>Rola</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.role}}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let element; columns: displayedColumns;">
+    </mat-row>
+
+  </table>
+</div>

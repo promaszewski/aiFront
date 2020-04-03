@@ -1,0 +1,72 @@
+<div class="addvisit">
+  <h2 class="addvisit-header">Dodaj wizyte</h2>
+  <form [formGroup]="visitForm" class="visit-container" (ngSubmit)="sent()">
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.nazwakontrahenta.errors }">
+      <input type="email" placeholder="Nazwa Kontrahenta" formControlName="nazwakontrahenta">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.nazwakontrahenta.errors" class="help-block">
+      <div *ngIf="formControls.nazwakontrahenta.errors.required">Nazwa Kontrahenta is required</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.misto.errors }">
+      <input type="email" placeholder="Miasto" formControlName="misto">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.misto.errors" class="help-block">
+      <div *ngIf="formControls.misto.errors.required">Miasto is required</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.ulica.errors }">
+      <input type="email" placeholder="Ulica" formControlName="ulica">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.ulica.errors" class="help-block">
+      <div *ngIf="formControls.ulica.errors.required">Ulica is required</div>
+    </div>
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.nrdomu.errors }">
+      <input type="email" placeholder="Nr domu" formControlName="nrdomu">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.nrdomu.errors" class="help-block">
+      <div *ngIf="formControls.nrdomu.errors.required">Nr Domu is required</div>
+    </div>
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.komentarz.errors }">
+      <input type="email" placeholder="Komentarz" formControlName="komentarz">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.komentarz.errors" class="help-block">
+      <div *ngIf="formControls.komentarz.errors.required"> Komentarz is required</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.materialyrek.errors }">
+      <input type="email" placeholder="Materiały Reklamowe" formControlName="materialyrek">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.materialyrek.errors" class="help-block">
+      <div *ngIf="formControls.materialyrek.errors.required"> Materiały reklamowe is required</div>
+    </div>
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.data.errors }">
+      <input type="email" placeholder="Data Wizyty" formControlName="data">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.data.errors" class="help-block">
+      <div *ngIf="formControls.data.errors.required"> Data is required</div>
+    </div>
+
+    <div *ngIf="isSubmitted && formControls.status.errors" class="help-block">
+      <div *ngIf="formControls.status.errors.required">Status is required</div>
+    </div>
+    <p> Wizyta Odbyta
+      <select type="email" formControlName="status" >
+        <option value=true>Tak</option>
+        <option value=false>Nie</option>
+      </select>
+    </p>
+
+    <p>
+      <input type="submit" value="Dodaj Wizyte">
+    </p>
+  </form>
+</div>
